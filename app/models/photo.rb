@@ -3,6 +3,10 @@ class Photo < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :fans,
+             :through => :photo,
+             :source => :user
+
   # Validations
 
   validates :image, :presence => true
